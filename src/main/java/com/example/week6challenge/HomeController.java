@@ -91,7 +91,7 @@ public class HomeController {
 
 
     @RequestMapping("/update/{id}")
-    public String updateMeme(@PathVariable("id") long id, Model model)
+    public String updateCar(@PathVariable("id") long id, Model model)
     {
         model.addAttribute("car", carRepository.findById(id));
         model.addAttribute("categories", categoryRepository.findAll());
@@ -100,10 +100,11 @@ public class HomeController {
 
 
     @RequestMapping("/delete/{id}")
-    public String deleteMeme(@PathVariable("id") long id)
+    public String deleteCar(@PathVariable("id") long id)
     {
         carRepository.deleteById(id);
         return "redirect:/";
     }
+
 
 }
