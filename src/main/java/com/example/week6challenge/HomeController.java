@@ -85,7 +85,10 @@ public class HomeController {
     @RequestMapping("/detail/{id}")
     public String showDetail(@PathVariable("id") long id, Model model)
     {
-        model.addAttribute("car", carRepository.findById(id).get());
+        Car car = carRepository.findById(id).get();
+        Category category = categoryRepository.findById(car.getCategory_id()).get();
+        model.addAttribute("car", car);
+        model.addAttribute("category", category);
         return "show";
     }
 

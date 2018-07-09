@@ -28,14 +28,14 @@ public class Car {
     private double msrp;
     private String image;
 
-    private String categoryName;
+    private long category_id;
 
-    public String getCategoryName() {
-        return categoryName;
+    public long getCategory_id() {
+        return category_id;
     }
 
-    public void setCategoryName(String categoryName) {
-        this.categoryName = categoryName;
+    public void setCategory_id(long category_id) {
+        this.category_id = category_id;
     }
 
     public long getId() {
